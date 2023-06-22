@@ -96,6 +96,8 @@ namespace EFCoreAttMgtSystems.Features
             emp.Logs!.Add(logInfo);
             DbContext.SaveChanges() ;
         }
+
+        //getAllEmployee
         public List<EmployeeView> GetAllEmployee()
         {
             //using LINQ to select data without log property
