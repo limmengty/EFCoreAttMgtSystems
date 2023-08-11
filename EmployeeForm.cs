@@ -46,9 +46,9 @@ namespace EFCoreAttMgtSystems
             {
                 var emp = new Employee()
                 {
-                    FullName = fullnameTextBox.Text.Trim(),
-                    Position = positionTextBox.Text.Trim(),
-                    CardNo = cardnoTextBox.Text.Trim(),
+                    FullName = fullnameTextBox.Text,
+                    Position = positionTextBox.Text,
+                    CardNo = cardnoTextBox.Text,
                     UserAccount = new UserAccount()
                     {
                         UserName = usernameTextBox.Text.Trim(),
@@ -79,10 +79,8 @@ namespace EFCoreAttMgtSystems
                 fullnameTextBox.Text = dataGridView1.SelectedCells[1].Value.ToString();
                 positionTextBox.Text = dataGridView1.SelectedCells[2].Value.ToString();
                 cardnoTextBox.Text = dataGridView1.SelectedCells[3].Value.ToString();
-                useraccountIdTextBox.Text = dataGridView1.SelectedCells[4].Value.ToString();
-                usernameTextBox.Text = dataGridView1.SelectedCells[5].Value.ToString();
+                usernameTextBox.Text = dataGridView1.SelectedCells[4].Value.ToString();
 
-                useraccountIdTextBox.Enabled = false;
                 addButton.Enabled = false;
                 saveButton.Enabled = false;
             }
@@ -97,13 +95,9 @@ namespace EFCoreAttMgtSystems
         {
             try
             {
-                if (MessageBox.Show("Do you went to delete or not? ",
-               "Employee Form",
-               MessageBoxButtons.YesNo,
-               MessageBoxIcon.Information
-               ) == DialogResult.Yes)
+                if (MessageBox.Show("Do you went to delete or not? ","Employee Form",MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    timeSheet.DeleteEmployee(employeIdTextBox.Text, useraccountIdTextBox.Text);
+                    timeSheet.DeleteEmployee(employeIdTextBox.Text);
                 }
                 LoadToGrid();
             }

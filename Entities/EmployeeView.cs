@@ -12,7 +12,7 @@ namespace EFCoreAttMgtSystems.Entities
         public string? FullName { get; set; }
         public string? Position { get; set; }
         public string? CardNo { get; set; }
-        public int? UserAccountID { get; set; }
         public string? UserName { get; set; }
+
     }
 }

@@ -1,10 +1,5 @@
 ﻿using EFCoreAttMgtSystems.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFCoreAttMgtSystems.Features
 {
@@ -20,9 +15,9 @@ namespace EFCoreAttMgtSystems.Features
         {
             if (string.IsNullOrEmpty(emp.FullName) || 
                 string.IsNullOrEmpty(emp.Position) || 
-                string.IsNullOrEmpty(emp.CardNo)|| 
-                string.IsNullOrEmpty(emp.UserAccount?.UserName)||
-                string.IsNullOrEmpty(emp.UserAccount.Password)
+                string.IsNullOrEmpty(emp.CardNo)
+                //string.IsNullOrEmpty(emp.UserAccount?.UserName)||
+                //string.IsNullOrEmpty(emp.UserAccount.Password)
                 )
             {
                 throw new ArgumentException("Please Provide all Employee data!");
@@ -62,25 +57,14 @@ namespace EFCoreAttMgtSystems.Features
 
 
         //
-        public void DeleteEmployee(string IndentityId, string userAccountId)
+        public void DeleteEmployee(string empId)
         {
-            if (string.IsNullOrEmpty(IndentityId))
-            {
-                throw new ArgumentException("Please provide the employee's identity ID!");
-            }
-
-            var emp = DbContext.Employees.Find(new Guid(IndentityId));
-            var idc = int.Parse(userAccountId);
-            var empuser = DbContext.UserAccounts.Find(idc);
-            if (emp == null)
-            {
-                throw new ArgumentException("Employee not found!");
-            }
-
+         
+            var founddata = DbContext.Employees.Find(new Guid (empId));
             // Delete the employee
-            DbContext.Employees.Remove(emp);
-            DbContext.UserAccounts.Remove(empuser);
+            DbContext.Employees.Remove(founddata);
             DbContext.SaveChanges();
+
         }
         public void LogEmployee(string cardNo, Log logInfo)
         {
@@ -107,8 +91,7 @@ namespace EFCoreAttMgtSystems.Features
                 FullName = emp.FullName,
                 Position = emp.Position,
                 CardNo = emp.CardNo,
-                UserAccountID = emp.UserAccount.UserAccountId,
-                UserName = emp.UserAccount.UserName,
+                UserName = emp.UserAccount.UserName    
             }).ToList();
         }
 

@@ -62,7 +62,7 @@
             manageeEmployeeButton.UseVisualStyleBackColor = true;
             manageeEmployeeButton.Click += manageeEmployeeButton_Click;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -72,7 +72,8 @@
             Controls.Add(label1);
             Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(0, 9, 0, 9);
-            Name = "Form1";
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             FormClosing += Form1_FormClosing;
             ResumeLayout(false);

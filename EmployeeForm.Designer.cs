@@ -45,7 +45,6 @@
             label6 = new Label();
             deleteButton = new Button();
             label7 = new Label();
-            useraccountIdTextBox = new TextBox();
             updateButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -74,7 +73,7 @@
             // 
             // employeIdTextBox
             // 
-            employeIdTextBox.Location = new Point(222, 81);
+            employeIdTextBox.Location = new Point(222, 84);
             employeIdTextBox.Name = "employeIdTextBox";
             employeIdTextBox.Size = new Size(271, 33);
             employeIdTextBox.TabIndex = 1;
@@ -194,16 +193,9 @@
             label7.AutoSize = true;
             label7.Location = new Point(37, 366);
             label7.Name = "label7";
-            label7.Size = new Size(143, 27);
+            label7.Size = new Size(126, 27);
             label7.TabIndex = 6;
-            label7.Text = "UserAccountId";
-            // 
-            // useraccountIdTextBox
-            // 
-            useraccountIdTextBox.Location = new Point(208, 360);
-            useraccountIdTextBox.Name = "useraccountIdTextBox";
-            useraccountIdTextBox.Size = new Size(271, 33);
-            useraccountIdTextBox.TabIndex = 5;
+            label7.Text = "UserAccount";
             // 
             // updateButton
             // 
@@ -223,7 +215,6 @@
             ClientSize = new Size(1375, 696);
             Controls.Add(updateButton);
             Controls.Add(label7);
-            Controls.Add(useraccountIdTextBox);
             Controls.Add(deleteButton);
             Controls.Add(saveButton);
             Controls.Add(label6);
@@ -243,6 +234,7 @@
             Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(5);
             Name = "EmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";
             Load += EmployeeForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -269,7 +261,6 @@
         private Label label6;
         private Button deleteButton;
         private Label label7;
-        private TextBox useraccountIdTextBox;
         private Button updateButton;
     }
 }

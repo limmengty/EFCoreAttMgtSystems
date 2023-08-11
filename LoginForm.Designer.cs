@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            usernameTextBox = new TextBox();
-            passwordTextBox = new TextBox();
+            usernamelogTextBox = new TextBox();
+            passwordsTextBox = new TextBox();
             label2 = new Label();
             label3 = new Label();
             loginButton = new Button();
@@ -47,24 +47,24 @@
             label1.TabIndex = 5;
             label1.Text = "UserName: ";
             // 
-            // usernameTextBox
+            // usernamelogTextBox
             // 
-            usernameTextBox.Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameTextBox.Location = new Point(190, 138);
-            usernameTextBox.Margin = new Padding(5);
-            usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(303, 33);
-            usernameTextBox.TabIndex = 4;
-            usernameTextBox.TextChanged += usernameTextBox_TextChanged;
+            usernamelogTextBox.Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            usernamelogTextBox.Location = new Point(190, 138);
+            usernamelogTextBox.Margin = new Padding(5);
+            usernamelogTextBox.Name = "usernamelogTextBox";
+            usernamelogTextBox.Size = new Size(303, 33);
+            usernamelogTextBox.TabIndex = 4;
+            usernamelogTextBox.TextChanged += usernameTextBox_TextChanged;
             // 
-            // passwordTextBox
+            // passwordsTextBox
             // 
-            passwordTextBox.Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextBox.Location = new Point(190, 207);
-            passwordTextBox.Margin = new Padding(5);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(303, 33);
-            passwordTextBox.TabIndex = 4;
+            passwordsTextBox.Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordsTextBox.Location = new Point(190, 207);
+            passwordsTextBox.Margin = new Padding(5);
+            passwordsTextBox.Name = "passwordsTextBox";
+            passwordsTextBox.Size = new Size(303, 33);
+            passwordsTextBox.TabIndex = 4;
             // 
             // label2
             // 
@@ -108,11 +108,12 @@
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(passwordTextBox);
-            Controls.Add(usernameTextBox);
+            Controls.Add(passwordsTextBox);
+            Controls.Add(usernamelogTextBox);
             Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(5);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             ResumeLayout(false);
             PerformLayout();
@@ -121,8 +122,8 @@
         #endregion
 
         private Label label1;
-        private TextBox usernameTextBox;
-        private TextBox passwordTextBox;
+        private TextBox usernamelogTextBox;
+        private TextBox passwordsTextBox;
         private Label label2;
         private Label label3;
         private Button loginButton;

@@ -32,7 +32,7 @@ namespace EFCoreAttMgtSystems
                 AppTimeSheet.DbContext.SaveChanges();
 
             }
-            Application.Run(new ClockManagement(AppTimeSheet));
+            Application.Run(new LoginForm(AppTimeSheet));
             /*        Application.Run(new MainForm(AppTimeSheet));
             */
         }

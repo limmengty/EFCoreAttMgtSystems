@@ -18,15 +18,14 @@ namespace EFCoreAttMgtSystems
         public LoginForm(TimeSheet timeSheet)
         {
             InitializeComponent();
-            usernameTextBox.Focus();
             _timeSheet = timeSheet;
-           
+            passwordsTextBox.Focus();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            var un = usernameTextBox.Text.Trim();
-            var ps = passwordTextBox.Text.Trim();
+            var un = usernamelogTextBox.Text.Trim();
+            var ps = passwordsTextBox.Text.Trim();
             Authentication auth = new Authentication(_timeSheet.DbContext, un, ps);
             try
             {
@@ -41,8 +40,8 @@ namespace EFCoreAttMgtSystems
                 else
                 {
                     /*           usernameTextBox.Clear();*/
-                    passwordTextBox.Clear();
-                    usernameTextBox.Focus();
+                    passwordsTextBox.Clear();
+                    usernamelogTextBox.Focus();
                     MessageBox.Show("Incorrect username or password!!");
                 }
             }

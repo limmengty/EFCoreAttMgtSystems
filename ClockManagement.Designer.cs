@@ -176,6 +176,7 @@
             Font = new Font("Open Sans", 14F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(5);
             Name = "ClockManagement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ClockManagement";
             Load += ClockManagement_Load;
             tableLayoutPanel1.ResumeLayout(false);
